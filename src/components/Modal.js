@@ -17,7 +17,6 @@ const customStyles = {
   },
 };
 
-
 const CreatePhotoModal = ({ setImages }) => {
   const user = useUser();
   const supabase = useSupabaseClient();
@@ -143,7 +142,7 @@ const CreatePhotoModal = ({ setImages }) => {
           <p className="helper-text">
             <span>Max. characters: 200</span>
           </p>
-          <button className="btn default" disabled={form} onClick={() => { handleClick() }}>
+          <button className="btn default upload" disabled={form} onClick={() => { handleClick() }}>
             Upload photo
           </button>
         </form>

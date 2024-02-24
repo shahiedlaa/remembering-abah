@@ -59,6 +59,10 @@ p {
   cursor: pointer;
 }
 
+.btn.default.upload {
+  margin: 0;
+}
+
 .btn.default:hover {
   background-color: rgb(226, 202, 158);
   color: black;
@@ -113,6 +117,10 @@ form {
   flex-direction: column;
 }
 
+label {
+  font-family: "Fraunces", serif;
+}
+
 .input-field {
   background: #eeeddb;
   border: none;
@@ -165,4 +173,3 @@ form {
   gap: 2rem;
   margin-top: 4rem;
 }
-
