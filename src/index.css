@@ -10,7 +10,7 @@ body {
   font-family: "Fraunces", serif;
   background-color: #faf8ec;
   padding: 1rem;
-  height: 100vh;
+  height: 100%;
 }
 
 code {
@@ -156,7 +156,6 @@ form {
   justify-content: center;
   color: darkred;
 }
-
 
 .footer {
   display: flex;

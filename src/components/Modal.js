@@ -43,11 +43,11 @@ const CreatePhotoModal = ({ setImages }) => {
 
   const handleChangeName = (event) => {
     setName(event.target.value);
-    if(name === "" && file === ""){
-      setForm(true);
+    if(name.length > 0 && file){
+      setForm(false);
     }
     else {
-      setForm(false);
+      setForm(true);
     }
   };
 
