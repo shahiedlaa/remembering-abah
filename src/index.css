@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  background-color: #dcd6b2;
+  height: 100vh;
+}
+
+.main {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  background-color: #faf8ec;
+  padding: 1rem;
+  height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1 {
+  font-family: "Fraunces", serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: #1f1d19;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: "Fraunces", serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #838376;
+  margin-top: 12px;
+}
+
+p {
+  font-family: "Fraunces", serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn.default {
+  font-family: "Fraunces", serif;
+  font-size: 20px;
+  font-weight: 400;
+  background: #1f1d19;
+  color: #fffdf1;
+  padding: 12px 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.default:hover {
+  background-color: rgb(226, 202, 158);
+  color: black;
+}
+
+.btn.default:disabled {
+  background-color: rgb(221, 221, 221);
+  color: black;
+}
+
+.btn.default.signOut {
+  background-color: rgb(167, 74, 74);
+  color: whitesmoke;
+}
+
+.btn.default.signOut:hover {
+  background-color: rgb(136, 129, 129);
+  color: whitesmoke;
+}
+
+
+.description {
+  padding: 10px 10px 5px 10px;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fffdf1;
+  margin: 15% auto;
+  padding: 32px;
+  padding-top: 48px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 12px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  background: #eeeddb;
+  border: none;
+  height: 50px;
+  border-radius: 4px;
+  padding: 12px 16px;
+}
+
+.helper-text {
+  font-size: 12px;
+  margin-top: 8px;
+  color: #838376;
+}
+
+/* Close button style */
+.close {
+  color: #1f1d19;
+  float: right;
+  font-size: 28px;
+  font-weight: 400;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  transition: 200ms;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #eeeddb;
+}
+
+.emptyHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: darkred;
+}
+
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
