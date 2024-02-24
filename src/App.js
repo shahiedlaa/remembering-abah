@@ -64,7 +64,8 @@ function App() {
             <PhotoGallery images={images} />
           }
           <div className="footer">
-            <h5>User's Email: {user.email}</h5>
+            <h5>User's Email: {user.email}</h5> 
+            <span className="footer-span"> | </span>
             <Button className="btn default signOut" onClick={() => signout()}>Sign Out</Button>
           </div>
         </>

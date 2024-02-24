@@ -173,3 +173,7 @@ label {
   gap: 2rem;
   margin-top: 4rem;
 }
+
+.footer-span {
+  font-size: 2rem;
+}
