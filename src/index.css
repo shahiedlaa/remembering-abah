@@ -1,8 +1,9 @@
 body {
   margin: 0;
   font-family: "Fraunces", serif;
-  background-color: #dcd6b2;
+  background-color: #faf8ec;
   height: 100vh;
+  text-align: center;
 }
 
 .main {
@@ -10,7 +11,15 @@ body {
   font-family: "Fraunces", serif;
   background-color: #faf8ec;
   padding: 1rem;
-  height: 100vh;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
 }
 
 code {
@@ -18,12 +27,13 @@ code {
     monospace;
 }
 
-h1 {
+h1.first-header {
   font-family: "Fraunces", serif;
   font-size: 60px;
   font-weight: 700;
   color: #1f1d19;
   margin-bottom: 0;
+  margin-top: 24px;
 }
 
 h2 {
@@ -32,17 +42,32 @@ h2 {
   font-weight: 400;
   color: #838376;
   margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.first-header-text {
+  font-family: "Fraunces", serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #838376;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 p {
   font-family: "Fraunces", serif;
+  font-size: 16px;
+  padding: 10px 10px 5px 10px;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.container-sm.mt-4 {
+  margin-top: 24px;
   align-items: center;
+}
+
+form {
+  display: flex;
+  max-width: 700px;
 }
 
 .btn.default {
@@ -64,25 +89,23 @@ p {
 }
 
 .btn.default:hover {
-  background-color: rgb(226, 202, 158);
-  color: black;
+  background-color: #3f3f46;
+  color: #fffdf1;
 }
 
 .btn.default:disabled {
   background-color: rgb(221, 221, 221);
-  color: black;
+  color: #1f1d19;
 }
 
-.btn.default.signOut {
-  background-color: rgb(167, 74, 74);
-  color: whitesmoke;
+.btn.signOut {
+  color: #1f1d19;
+  font-weight: 400;
 }
 
-.btn.default.signOut:hover {
-  background-color: rgb(136, 129, 129);
-  color: whitesmoke;
+.btn.signOut:hover {
+  color: #838376;
 }
-
 
 .description {
   padding: 10px 10px 5px 10px;
@@ -102,6 +125,16 @@ p {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+@media (max-width: 575px) {
+  .modal-full-mobile {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+  }
+}
+
 .modal-content {
   background-color: #fffdf1;
   margin: 15% auto;
@@ -119,6 +152,11 @@ form {
 
 label {
   font-family: "Fraunces", serif;
+}
+
+.form-label {
+  color: #838376;
+  padding-bottom: 16px;
 }
 
 .input-field {
@@ -156,24 +194,26 @@ label {
   text-decoration: none;
   cursor: pointer;
   background-color: #eeeddb;
+  align-items: center;
 }
 
 .emptyHolder {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  color: darkred;
+  color: #1f1d19;
 }
 
 .footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin-top: 4rem;
+  align-items: baseline;
+  margin-top: 24px;
 }
 
 .footer-span {
-  font-size: 2rem;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1f1d19;
 }

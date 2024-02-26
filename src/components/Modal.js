@@ -23,7 +23,7 @@ const CreatePhotoModal = ({ setImages }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [file, setFile] = useState("");
   const [name, setName] = useState("");
-  const [form,setForm] = useState(true);
+  const [form, setForm] = useState(true);
 
   const openModal = () => {
     setIsOpen(true);
@@ -33,7 +33,7 @@ const CreatePhotoModal = ({ setImages }) => {
     setIsOpen(false);
     setName("");
     setForm(true);
-    setFile("")
+    setFile("");
   }
 
   const handleChange = (event) => {
@@ -42,10 +42,9 @@ const CreatePhotoModal = ({ setImages }) => {
 
   const handleChangeName = (event) => {
     setName(event.target.value);
-    if(name.length > 0 && file){
+    if (name.length > 0 && file) {
       setForm(false);
-    }
-    else {
+    } else {
       setForm(true);
     }
   };
@@ -59,37 +58,34 @@ const CreatePhotoModal = ({ setImages }) => {
     if (user) {
       getImages();
     }
-  }, [user])
+  }, [user]);
 
   async function getImages() {
-    const { data, error } = await supabase
-      .storage
-      .from('images')
+    const { data, error } = await supabase.storage
+      .from("images")
       .list(user?.id + "/", {
         limit: 100,
         offset: 0,
-      })
+        sortBy: { column: "created_at", order: "asc" },
+      });
 
     if (data !== null) {
-      setImages(data)
-    }
-    else {
-      console.log(error)
+      setImages(data);
+    } else {
+      console.log(error);
     }
   }
 
   async function uploadImage(ev) {
     let file = ev.target.files[0];
 
-    const { data, error } = await supabase
-      .storage
-      .from('images')
-      .upload(user.id + "/" + name, file)
+    const { data, error } = await supabase.storage
+      .from("images")
+      .upload(user.id + "/" + name, file);
 
     if (data) {
       getImages();
-    }
-    else {
+    } else {
       console.log(error);
     }
   }
@@ -127,22 +123,30 @@ const CreatePhotoModal = ({ setImages }) => {
         </div>
 
         <form style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-          <input type="file" onChange={e => handleChange(e)} />
+          <input type="file" onChange={(e) => handleChange(e)} />
           <p className="helper-text">
-            <span>Format: JPEG. Size: Less than 50MB</span>
+            <span>
+              Accepts only JPEG format images measuring less than 50MB
+            </span>
           </p>
           <label for="textInput">Describe the special moment</label>
           <textarea
-            onChange={e => handleChangeName(e)}
+            onChange={(e) => handleChangeName(e)}
             type="text"
             value={name}
             className="input-field"
             id="textInput"
           ></textarea>
           <p className="helper-text">
-            <span>Max. characters: 200</span>
+            <span>Sadly no unique characters and emojis 😞</span>
           </p>
-          <button className="btn default upload" disabled={form} onClick={() => { handleClick() }}>
+          <button
+            className="btn default upload"
+            disabled={form}
+            onClick={() => {
+              handleClick();
+            }}
+          >
             Upload photo
           </button>
         </form>
